@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+ # The type of workload we are creating 
+kind: Deployment
+metadata:
+  # Name of deployment - Required
+  name: aks-basics-deployment-demo 
+spec:
+  replicas: 2
+  selector:
+    matchLabels: 
+      app: aks-basics-demo
+  # Pod template which decribes the pod you want to deploy
+  template: 
+    metadata:
+      # Used to logically group pods together
+      labels: 
+        app: aks-basics-demo
+    # Specific details about the containers in the Pod
+    spec: 
+      containers:
+      - name: aks-basics-containers-demo
+        # Docker Hub image to use
+        image: nginx 
+        # Define ports to expose
+        ports: 
+        - containerPort: 80
+          # Reference name of port
+          name: http 
+        resources:
+          # Minimum amount of resources we want
+          requests: 
+            cpu: 100m
+            memory: 128Mi
+          # Maximum amount of resources we want
+          limits: 
+            cpu: 250m
+            memory: 256Mi
