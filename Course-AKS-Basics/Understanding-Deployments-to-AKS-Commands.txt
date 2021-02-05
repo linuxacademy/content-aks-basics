@@ -1,0 +1,37 @@
+Get AZ AKS credentials to run kubectl commands against your Cluster
+
+az aks get-credentials --name Cluster01 --resource-group <Resource Group Name>
+
+--------------------
+
+Create deployment file in current directory
+
+touch deployment.yaml
+
+--------------------
+
+Deploy application using deployment file
+
+kubectl apply -f ./deployment.yaml
+
+--------------------
+
+Get information about deploymennt
+
+--------------------
+
+Get more information about deployment
+
+kubectl get deploy aks-basics-deployment-demo -o wide
+
+--------------------
+
+Get information about pods
+
+kubectl get pods
+
+--------------------
+
+Get more information about pods
+
+kubectl get pods -o wide
