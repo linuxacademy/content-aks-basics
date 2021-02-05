@@ -18,6 +18,8 @@ kubectl apply -f ./deployment.yaml
 
 Get information about deploymennt
 
+kubectl get deploy aks-basics-deployment-demo
+
 --------------------
 
 Get more information about deployment
