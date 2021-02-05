@@ -1,0 +1,29 @@
+Get AZ AKS credentials to run kubectl commands against your Cluster
+
+az aks get-credentials --name Cluster01 --resource-group <Resource Group Name>
+
+--------------------
+
+Create service file in current directory
+
+touch service.yaml
+
+--------------------
+
+Deploy service
+
+kubectl apply -f service.yaml
+
+--------------------
+
+Get information about service
+
+kubectl get service aks-basics-loadbalancer-demo
+
+--------------------
+
+Curl command against external IP address
+
+curl "http://<IP Address>"
+
+example: curl "http://20.62.189.235"
