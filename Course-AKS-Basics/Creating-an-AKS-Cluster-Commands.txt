@@ -1,0 +1,33 @@
+Create an AKS Cluster
+
+az aks create \
+--resource-group <Resource Group Name> \
+--name Cluster01 \
+--node-count 3 \
+--generate-ssh-keys \
+--node-vm-size Standard_B2s \
+--enable-managed-identity
+
+--------------------
+
+Get AZ AKS credentials to run kubectl commands against your Cluster
+
+az aks get-credentials --name Cluster01 --resource-group <Resource Group Name>
+
+--------------------
+
+Get node information
+
+kubectl get nodes
+
+--------------------
+
+Get more node information
+
+kubectl get nodes -o wide 
+
+--------------------
+
+Get cluster information
+
+kubectl cluster-info
